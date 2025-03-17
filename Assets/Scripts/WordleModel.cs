@@ -2,29 +2,18 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript1 : MonoBehaviour
 {
-    int Cell[6, 5];
+    int[,] Cell;
 
-    Text possibleAnswersAsset
-    Text allowedWordsAsset
+    [SerializeField] TextAsset possibleAnswersAsset;
+    [SerializeField] TextAsset allowedWordsAsset;
 
-    possibleAnswers[]
-    allowedWords[]
+    string[] possibleAnswers;
+    string[] allowedWords;
 
     string correctAnswer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        int currentAttempt = 0;
+    int currentAttempt;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void Setup()
+    public void Setup()
     {
 
     }
