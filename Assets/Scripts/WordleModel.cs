@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class NewMonoBehaviourScript1 : MonoBehaviour
+public class WordleModel : MonoBehaviour
 {
     int[,] Cell;
 
@@ -15,7 +16,11 @@ public class NewMonoBehaviourScript1 : MonoBehaviour
 
     public void Setup()
     {
+        possibleAnswers = possibleAnswersAsset.text.Split('\n');
 
+        int r = Random.Range(0, possibleAnswers.Length);
+
+        correctAnswer =  possibleAnswers[r];
     }
 
     private void isValidGuess(string a)

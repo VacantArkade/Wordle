@@ -1,10 +1,8 @@
 using UnityEngine;
 using TMPro;
 
-public class Cell : MonoBehaviour
+public class Cell
 {
-    [SerializeField] TMP_Text symbolText;
-
     public char letter;
     Color Color;
 }

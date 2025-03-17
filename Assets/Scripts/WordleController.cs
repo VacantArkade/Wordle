@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [SerializeField] TMP_InputField input;
-    //[SerializeField] WordleModel model;
-    //[SerializeField] WordleView view;
+    [SerializeField] WordleModel model;
+    [SerializeField] WordleView view;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,8 +19,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void GameSetup()
     {
-        //model.Setup();
-        //view.Setup();
+        model.Setup();
+        view.Setup();
     }
 
     private void SubmitGuess()
