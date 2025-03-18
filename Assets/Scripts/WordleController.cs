@@ -25,7 +25,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void SubmitGuess()
     {
+        if (model.IsValidGuess(input.text) == true)
+        {
 
+        }
     }
 
     private void WinGame()
