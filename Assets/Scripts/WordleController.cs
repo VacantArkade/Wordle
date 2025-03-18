@@ -4,11 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class WordleController : MonoBehaviour
 {
     [SerializeField] TMP_InputField input;
     [SerializeField] WordleModel model;
     [SerializeField] WordleView view;
+
+    public string curWord;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,11 +25,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
         view.Setup();
     }
 
-    private void SubmitGuess()
+    public void SubmitGuess()
     {
         if (model.IsValidGuess(input.text) == true)
         {
-
+            curWord = input.text;
+            view.UpdateView();
         }
     }
 

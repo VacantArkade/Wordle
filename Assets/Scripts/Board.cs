@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Board : MonoBehaviour
 {
-
     [SerializeField] TMP_InputField myTextInput;
     [SerializeField] Button[] row0;
     [SerializeField] Button[] row1;
@@ -14,18 +13,6 @@ public class Board : MonoBehaviour
     [SerializeField] Button[] row5;
 
     int count = 0;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AcceptInput()
     {

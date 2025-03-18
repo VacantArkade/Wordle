@@ -12,11 +12,16 @@ public class WordleModel : MonoBehaviour
     string[] possibleAnswers;
     string[] allowedWords;
 
+
     string correctAnswer;
     int currentAttempt;
 
     public void Setup()
     {
+        currentAttempt = 0;
+
+        allowedWords = allowedWordsAsset.text.Split('\n');
+
         possibleAnswers = possibleAnswersAsset.text.Split('\n');
 
         int r = Random.Range(0, possibleAnswers.Length);
