@@ -323,9 +323,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Board, Assembly-CSharp
-        m_MethodName: AcceptInput
+      - m_Target: {fileID: 1150214529}
+        m_TargetAssemblyTypeName: WordleController, Assembly-CSharp
+        m_MethodName: SubmitGuess
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9813,8 +9813,8 @@ MonoBehaviour:
   - {fileID: 77930278}
   - {fileID: 1904096150}
   - {fileID: 1015719845}
-  model: {fileID: 0}
-  controller: {fileID: 0}
+  model: {fileID: 1657139493}
+  controller: {fileID: 1150214529}
   fullyCorrectColor: {r: 0, g: 0.48101687, b: 1, a: 1}
   partiallyCorrectColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2054650592

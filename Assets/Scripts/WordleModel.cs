@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Windows;
 
@@ -31,9 +32,10 @@ public class WordleModel : MonoBehaviour
 
     public bool IsValidGuess(string a)
     {
+        Debug.Log("Is valid activates");
         bool valid = false;
 
-        if (a.Length != 5)
+        if (a.Length != 5 || currentAttempt > 6)
         {
             Debug.Log("INCORRECT NUMBER OF LETTERS");
             valid = false;
@@ -46,6 +48,7 @@ public class WordleModel : MonoBehaviour
                 if (a == allowedWords[i])
                 {
                     valid = true;
+                    currentAttempt++;
                 }
             }
 
@@ -54,10 +57,12 @@ public class WordleModel : MonoBehaviour
                 if (a == possibleAnswers[i])
                 {
                     valid = true;
+                    currentAttempt++;
                 }
             }
         }
-        return valid;
+        //return valid;
+        return true;
     }
 
     private void UpdateCells()

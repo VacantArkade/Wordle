@@ -10,7 +10,6 @@ public class WordleView : MonoBehaviour
     [SerializeField] Color fullyCorrectColor;
     [SerializeField] Color partiallyCorrectColor;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Setup()
     {
         for (int r = 0; r < 6; r++)
@@ -18,7 +17,7 @@ public class WordleView : MonoBehaviour
             for (int c = 0; c < 5; c++)
             {
                 rows[r].GetChild(c).GetComponentInChildren<TMP_Text>().text = " ";
-                rows[r].GetChild(c).GetComponent<Image>().color = Color.white;
+                rows[r].GetChild(c).GetComponent<Image>().color = Color.blue;
             }
         }
     }
