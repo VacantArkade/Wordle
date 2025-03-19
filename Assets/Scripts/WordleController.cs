@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WordleController : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class WordleController : MonoBehaviour
 
     public string curWord;
 
+    //public bool ready = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GameSetup();
@@ -29,18 +30,23 @@ public class WordleController : MonoBehaviour
     {
         if (model.IsValidGuess(input.text) == true)
         {
-            curWord = input.text;
+            curWord = input.text.ToLower();
             view.UpdateView();
+            if (curWord == model.correctAnswer.ToString())
+            {
+                WinGame();
+            }
+            model.currentAttempt++;
         }
     }
 
     private void WinGame()
     {
-
+        SceneManager.LoadScene("Win");
     }
 
     private void LoseGame()
     {
-
+        GameSetup();
     }
 }

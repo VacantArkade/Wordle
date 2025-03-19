@@ -14,8 +14,8 @@ public class WordleModel : MonoBehaviour
     string[] allowedWords;
 
 
-    string correctAnswer;
-    int currentAttempt;
+    public string correctAnswer;
+    public int currentAttempt;
 
     public void Setup()
     {
