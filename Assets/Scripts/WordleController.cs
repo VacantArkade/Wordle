@@ -13,11 +13,18 @@ public class WordleController : MonoBehaviour
 
     public string curWord;
 
-    //public bool ready = true;
-
     void Start()
     {
         GameSetup();
+    }
+
+    private void Update()
+    {
+        curWord = input.text.ToLower();
+        if(model.currentAttempt >= 6 && !model.IsValidGuess(curWord))
+        {
+            LoseGame();
+        }
     }
 
     private void GameSetup()
@@ -28,11 +35,11 @@ public class WordleController : MonoBehaviour
 
     public void SubmitGuess()
     {
-        if (model.IsValidGuess(input.text) == true)
+        curWord = input.text.ToLower();
+        if (model.IsValidGuess(curWord) == true)
         {
-            curWord = input.text.ToLower();
             view.UpdateView();
-            if (curWord == model.correctAnswer.ToString())
+            if (curWord.ToString().Trim() == model.correctAnswer.ToString().Trim())
             {
                 WinGame();
             }
@@ -47,6 +54,6 @@ public class WordleController : MonoBehaviour
 
     private void LoseGame()
     {
-        GameSetup();
+        SceneManager.LoadScene("Lose");
     }
 }

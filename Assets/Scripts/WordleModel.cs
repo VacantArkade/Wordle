@@ -5,7 +5,7 @@ using UnityEngine.Windows;
 
 public class WordleModel : MonoBehaviour
 {
-    public int[,] Cell;
+    public Cell[,] Cell;
 
     [SerializeField] TextAsset possibleAnswersAsset;
     [SerializeField] TextAsset allowedWordsAsset;
@@ -16,6 +16,7 @@ public class WordleModel : MonoBehaviour
 
     public string correctAnswer;
     public int currentAttempt;
+
 
     public void Setup()
     {
@@ -35,7 +36,7 @@ public class WordleModel : MonoBehaviour
         Debug.Log("Is valid activates");
         bool valid = false;
 
-        if (a.Length != 5 || currentAttempt > 6)
+        if (a.Length != 5)
         {
             Debug.Log("INCORRECT NUMBER OF LETTERS");
             valid = false;
@@ -45,24 +46,21 @@ public class WordleModel : MonoBehaviour
         {
             for (int i = 0; i < allowedWords.Length; i++)
             {
-                if (a == allowedWords[i])
+                if (a == allowedWords[i].Trim())
                 {
                     valid = true;
-                    currentAttempt++;
                 }
             }
 
             for (int i = 0; i < possibleAnswers.Length; i++)
             {
-                if (a == possibleAnswers[i])
+                if (a == possibleAnswers[i].Trim())
                 {
                     valid = true;
-                    currentAttempt++;
                 }
             }
         }
-        //return valid;
-        return true;
+        return valid;
     }
 
     private void UpdateCells()

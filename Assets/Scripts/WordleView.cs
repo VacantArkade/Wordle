@@ -1,14 +1,12 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 public class WordleView : MonoBehaviour
 {
     [SerializeField] Transform[] rows;
     [SerializeField] WordleModel model;
     [SerializeField] WordleController controller;
-
-    //[SerializeField] Color fullyCorrectColor;
-    //[SerializeField] Color partiallyCorrectColor;
 
     public void Setup()
     {
@@ -27,6 +25,21 @@ public class WordleView : MonoBehaviour
         for (int c = 0; c < 5; c++)
         {
             rows[model.currentAttempt].GetChild(c).GetComponentInChildren<TMP_Text>().text = controller.curWord[c].ToString();
+
+            if (model.correctAnswer[c] == controller.curWord[c])
+            {
+                rows[model.currentAttempt].GetChild(c).GetComponent<Image>().color = Color.green;
+            }
+
+            else if (model.correctAnswer.Contains(controller.curWord[c]))
+            {
+                rows[model.currentAttempt].GetChild(c).GetComponent<Image>().color = Color.yellow;
+            }
+
+            else
+            {
+                rows[model.currentAttempt].GetChild(c).GetComponent<Image>().color = Color.gray;
+            }
         }
     }
 }
