@@ -8559,6 +8559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleAnswersAsset: {fileID: 4900000, guid: 487e98075ec651a43ac7285a04d657a1, type: 3}
   allowedWordsAsset: {fileID: 4900000, guid: 1923295e96c74644dac8edb851886ebd, type: 3}
+  correctAnswer: 
+  currentAttempt: 0
 --- !u!1 &1699135823
 GameObject:
   m_ObjectHideFlags: 0
@@ -9815,8 +9817,6 @@ MonoBehaviour:
   - {fileID: 1015719845}
   model: {fileID: 1657139493}
   controller: {fileID: 1150214529}
-  fullyCorrectColor: {r: 0, g: 0.48101687, b: 1, a: 1}
-  partiallyCorrectColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2054650592
 GameObject:
   m_ObjectHideFlags: 0

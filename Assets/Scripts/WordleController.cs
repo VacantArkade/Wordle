@@ -21,7 +21,7 @@ public class WordleController : MonoBehaviour
     private void Update()
     {
         curWord = input.text.ToLower();
-        if(model.currentAttempt >= 6 && !model.IsValidGuess(curWord))
+        if(model.currentAttempt >= 6 && model.correctAnswer != curWord)
         {
             LoseGame();
         }
